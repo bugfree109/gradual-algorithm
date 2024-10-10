@@ -1,3 +1,35 @@
+#!/bin/bash
+
+# 创建主目录
+mkdir -p src
+
+# 创建子目录和README文件
+directories=(
+    "01_Arrays_and_Strings"
+    "02_Linked_Lists"
+    "03_Stacks_and_Queues"
+    "04_Hash_Tables"
+    "05_Trees_and_Binary_Trees"
+    "06_Graphs"
+    "07_Sorting_Algorithms"
+    "08_Binary_Search"
+    "09_Dynamic_Programming"
+    "10_Greedy_Algorithms"
+    "11_Backtracking"
+    "12_Advanced_Data_Structures"
+    "13_Review_and_Mock_Interviews"
+    "Resources"
+)
+
+for dir in "${directories[@]}"; do
+    mkdir -p "AlgorithmStudy/$dir"
+    touch "AlgorithmStudy/$dir/README.md"
+    echo "# $dir" > "AlgorithmStudy/$dir/README.md"
+    echo "Created $dir and its README.md"
+done
+
+# 创建主README文件
+cat << EOF > AlgorithmStudy/README.md
 # 算法学习项目
 
 ## 概述
@@ -29,3 +61,6 @@
 查看 Resources 目录获取额外的学习材料和有用链接。
 
 祝学习愉快，算法能力稳步提升！
+EOF
+
+echo "Directory structure created successfully!"
